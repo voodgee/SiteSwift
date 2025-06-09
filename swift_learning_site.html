@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Курс по Swift — 56 дней</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      margin: 0;
+      padding: 2rem;
+      color: #212529;
+    }
+    h1 {
+      text-align: center;
+      color: #0d6efd;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .day {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      margin: 1.5rem auto;
+      max-width: 900px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .day:hover {
+      transform: translateY(-3px);
+    }
+    .day h2 {
+      margin-top: 0;
+      color: #198754;
+      font-size: 1.5rem;
+    }
+    .day p {
+      font-size: 1.1rem;
+    }
+    a {
+      color: #0d6efd;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>📘 Курс по Swift за 56 дней</h1>
+
+  <div id="content"></div>
+
+  <script>
+    const tasks = [
+      {
+        title: "Установка и основы синтаксиса",
+        text: "Установи Xcode или Swift Playgrounds. Изучи переменные, константы, типы данных.",
+        link: "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/thebasics/"
+      },
+      {
+        title: "Условные операторы",
+        text: "if, else, switch — логика принятия решений.",
+        link: "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/controlflow/#Conditional-Statements"
+      },
+      {
+        title: "Циклы",
+        text: "Познакомься с for-in, while и repeat-while.",
+        link: "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/controlflow/#Loops"
+      },
+      {
+        title: "Функции",
+        text: "Функции, параметры, возвращаемые значения.",
+        link: "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/functions/"
+      }
+    ];
+
+    const content = document.getElementById("content");
+    tasks.forEach((task, i) => {
+      const div = document.createElement("div");
+      div.className = "day";
+      div.innerHTML = `
+        <h2>День ${i + 1}: ${task.title}</h2>
+        <p>${task.text}</p>
+        <p><a href="${task.link}" target="_blank">📎 Читать подробнее на swift.org</a></p>
+      `;
+      content.appendChild(div);
+    });
+  </script>
+</body>
+</html>
